@@ -1,0 +1,7 @@
+php:
+  build: .
+  container_name: php-container
+  ports: 
+    - 80:80
+  volumes:
+    - ./src:/var/www/html
