@@ -1,4 +1,4 @@
-FROM php:5.6-apache
+FROM php7.0-apache
 
 EXPOSE 80
 EXPOSE 9000
@@ -6,7 +6,7 @@ EXPOSE 9000
 # Habilitando o modo de reescrita do Apache
 RUN a2enmod rewrite
 
-RUN pecl install xdebug-2.5.3 \
+RUN pecl install xdebug \
     && docker-php-ext-enable xdebug
 
 # Configure xDebug
@@ -20,5 +20,3 @@ xdebug.remote_connect_back=0\n\
 xdebug.remote_host=docker.for.mac.localhost\n\
 xdebug.max_nesting_level=1500\
 ">> /usr/local/etc/php/conf.d/xdebug.ini
-
-      

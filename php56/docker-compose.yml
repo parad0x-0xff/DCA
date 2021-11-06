@@ -1,6 +1,6 @@
 php:
   build: .
-  container_name: php-container
+  container_name: php56-container
   ports: 
     - 80:80
   volumes:
