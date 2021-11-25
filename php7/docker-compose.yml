@@ -1,6 +1,10 @@
 php:
   build: .
   container_name: php7-container
+  extra_hosts:
+    - "host.docker.internal:host-gateway"
+  environment:
+    - XDEBUG_MODE=develop,debug
   ports: 
     - 80:80
   volumes:
