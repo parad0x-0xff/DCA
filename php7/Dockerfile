@@ -7,6 +7,7 @@ EXPOSE 9003
 RUN a2enmod rewrite
 
 RUN pecl install xdebug && docker-php-ext-enable xdebug
+RUN docker-php-ext-install mysqli && docker-php-ext-enable mysqli
 
 # Configure xDebug
 RUN echo '[xdebug]\n\
